@@ -11,3 +11,15 @@ Route::get('/admin/dashboard', function () {
 Route::get('/user/dashboard', function () {
     return view('/user/dashboard');
 });
+
+Route::get('/register', function () {
+    return view('register');
+});
+
+Route::get('/admin/barang', function () {
+    return view('admin/barang');
+});
+
+Route::get('/admin/peserta', function () {
+    return view('admin/peserta');
+});

@@ -19,10 +19,10 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-3 gap-2">
                         <li class="nav-item">
-                            <a class="nav-link active" href="dashboard">Dashboard</a>
+                            <a class="nav-link" href="dashboard">Dashboard</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="barang">List Barang</a>
+                            <a class="nav-link active" href="barang">List Barang</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="peserta">List Peserta</a>
@@ -33,39 +33,21 @@
         </nav>
         </header>
 
-    <!-- DASHBOARD STAT -->
-    <section class="stats container mt-5">
-      <div class="stat-card">
-          <h3>Total Barang</h3>
-          <p>0</p>
-          <a href="#" class="btn btn-custom">Lihat Semua</a>
-      </div>
-
-    
-
-      <div class="stat-card">
-          <h3>Total Peserta</h3>
-          <p>0</p>
-          <a href="#" class="btn btn-custom">Lihat Semua</a>
-      </div>
-
-      <div class="stat-card">
-          <h3>Total Transaksi</h3>
-          <p>0</p>
-          <a href="#" class="btn btn-custom">Lihat Semua</a>
-      </div>
-    </section>
-
     <!-- SECTION BRAND -->
     <section class="dashboard-section container mt-4">
         <h2>List Barang</h2>
+        <br>
+        <a href="" class="btn btn-dark" style="margin:10px;" >Kembali</a>
+        <a href="" class="btn btn-dark" style="margin:10px;" >Tambah Barang Baru</a>
         <table>
             <thead>
                 <tr>
                     <th>Nama Barang</th>
                     <th>Harga Awal</th>
-                    <th>Jumlah Penawar</th>
+                    <th>Jumlah Peserta</th>
                     <th>Penawaran Tertinggi</th>
+                    <th>Penawar Tertinggi</th>
+                    <th>Aksi</th>
                 </tr>
             </thead>
             <tbody>
@@ -74,37 +56,14 @@
                     <td>Rp. 40 Juta</td>
                     <td>70</td>
                     <td>Rp. 127 Juta</td>
-                </tr>
-            </tbody>
-        </table>
-        <br>
-        <a href="" class="btn btn-dark">Tambah Barang Baru</a>
-    </section>
-
-    <!-- SECTION TRANSAKSI -->
-    <section class="dashboard-section container mt-4">
-        <h2>Transaksi Terbaru</h2>
-        <table>
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Nama</th>
-                    <th>Nama Barang</th>
-                    <th>Harga Awal</th>
-                    <th>Harga Final</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>1</td>
                     <td>Ambasingh</td>
-                    <td>Monyet ijo banyumas</td>
-                    <td>Rp. 69.000</td>
-                    <td>Rp. 69.Juta</td>
+                    <td>
+                        <a href="" class="btn btn-warning">edit</a>
+                        <a href="" class="btn btn-danger">hapus</a>
+                    </td>
                 </tr>
             </tbody>
         </table>
-        <p class="text-muted">Belum ada transaksi.</p>
     </section>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>

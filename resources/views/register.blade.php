@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Welcome</title>
+    <title>Register</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
   </head>
   <body>
@@ -12,7 +12,7 @@
             <div class="col-md-7">
                 <div class="card shadow">
                     <div class="card-header bg-primary text-white text-center">
-                        <h4>Login Ke Sistem Lelang</h4>
+                        <h4>Buat Akun Baru</h4>
                     </div>
                         <div class="card-body">
                             <form action="proses/kirim.php" method="POST" enctype="multipart/form-data">
@@ -23,9 +23,8 @@
                                     <input type="text" name="password" id="harga" class="form-control" placeholder="Password" aria-label="Username" aria-describedby="basic-addon1">
                                 </div>
                                 <div class="text-center">
-                                    <button type="submit" name="submit" class="btn btn-primary">Login</button>
-                                    <p>Belum punya akun?</p>
-                                    <a href="/register" type="button" class="btn btn-secondary">Register</a>
+                                    <button type="submit" name="submit" class="btn btn-primary">Register</button>
+                                    <a href="/" type="button" class="btn btn-secondary">Kembali</a>
                                 </div>
                             </form>
                         </div>
@@ -42,7 +41,7 @@
         Swal.fire({
         icon: 'success',
         title: 'Berhasil!',
-        text: 'Login Berhasil.',
+        text: 'Register Berhasil.',
         confirmButtonText: 'OK',
         backdrop: true
         });
@@ -51,8 +50,8 @@
         <script>
         Swal.fire({
         icon: 'error',
-        title: 'Login Gagal!',
-        text: 'Password atau Username salah.',
+        title: 'Register Gagal!',
+        text: 'Terjadi.',
         confirmButtonText: 'Coba Lagi',
         backdrop: true
         });

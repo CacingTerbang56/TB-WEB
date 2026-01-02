@@ -3,10 +3,9 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>LIST PESERTA - ADMIN</title>
+    <title>TRANSAKSI - ADMIN</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
-
 <body>
 <header>
     <nav class="navbar navbar-expand-lg bg-dark navbar-dark py-3">
@@ -15,7 +14,6 @@
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
-
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-3 gap-2">
                     <li class="nav-item">
@@ -25,18 +23,15 @@
                         <a class="nav-link" href="{{ route('admin.barang') }}">List Barang</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="{{ route('admin.peserta') }}">List Peserta</a>
+                        <a class="nav-link" href="{{ route('admin.peserta') }}">List Peserta</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('admin.transaksi') }}">Transaksi</a>
+                        <a class="nav-link active" href="{{ route('admin.transaksi') }}">Transaksi</a>
                     </li>
                 </ul>
-
                 <form action="{{ route('logout') }}" method="POST" class="ms-auto">
                     @csrf
-                    <button type="submit" class="auth-btn logout">
-                        Logout
-                    </button>
+                    <button type="submit" class="auth-btn logout">Logout</button>
                 </form>
             </div>
         </div>
@@ -44,30 +39,33 @@
 </header>
 
 <section class="dashboard-section container mt-4">
-    <h2>List Peserta</h2>
-
-    <div class="mb-3">
-        <a href="{{ route('admin.dashboard') }}" class="btn btn-secondary">Kembali</a>
+    <div class="d-flex justify-content-between align-items-center mb-3">
+    <h2>Transaksi Terbaru</h2>
     </div>
-
     <table>
         <thead>
         <tr>
-            <th>ID</th>
+            <th>No</th>
             <th>Nama Peserta</th>
-            <th>Total Transaksi</th>
+            <th>Nama Barang</th>
+            <th>Harga Awal</th>
+            <th>Harga Akhir</th>
+            <th>Tanggal</th>
         </tr>
         </thead>
         <tbody>
-        @forelse($participants ?? [] as $participant)
+        @forelse($transactions as $trx)
             <tr>
-                <td>{{ $participant->id }}</td>
-                <td>{{ $participant->name }}</td>
-                <td>{{ $participant->transactions_count ?? $participant->transactions->count() }}</td>
+                <td>{{ $loop->iteration }}</td>
+                <td>{{ $trx->winner->name }}</td>
+                <td>{{ $trx->item->name }}</td>
+                <td>Rp. {{ number_format($trx->item->start_price,0,',','.') }}</td>
+                <td>Rp. {{ number_format($trx->final_price,0,',','.') }}</td>
+                <td>{{ $trx->created_at->format('d-m-Y H:i') }}</td>
             </tr>
         @empty
             <tr>
-                <td colspan="3" class="text-center">Belum ada peserta.</td>
+                <td colspan="6" class="text-center text-muted">Belum ada transaksi.</td>
             </tr>
         @endforelse
         </tbody>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Register</title>
+    <title>Welcome</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
           rel="stylesheet">
 </head>
@@ -13,15 +13,11 @@
         <div class="col-md-7">
             <div class="card shadow">
                 <div class="card-header bg-primary text-white text-center">
-                    <h4>Buat Akun Baru</h4>
+                    <h4>Login Ke Sistem Lelang</h4>
                 </div>
                 <div class="card-body">
-                    <form action="{{ route('register.post') }}" method="POST">
+                    <form action="{{ route('login.post') }}" method="POST">
                         @csrf
-                        <div class="input-group mb-3">
-                            <input type="text" name="name" class="form-control"
-                                   placeholder="Nama" required>
-                        </div>
                         <div class="input-group mb-3">
                             <input type="email" name="email" class="form-control"
                                    placeholder="Email" required>
@@ -30,14 +26,12 @@
                             <input type="password" name="password" class="form-control"
                                    placeholder="Password" required>
                         </div>
-                        <div class="input-group mb-3">
-                            <input type="password" name="password_confirmation"
-                                   class="form-control"
-                                   placeholder="Konfirmasi Password" required>
-                        </div>
                         <div class="text-center">
-                            <button type="submit" class="btn btn-primary">Register</button>
-                            <a href="{{ route('login') }}" class="btn btn-secondary">Kembali</a>
+                            <button type="submit" class="btn btn-primary">Login</button>
+                            <p class="mt-3">Belum punya akun?</p>
+                            <a href="{{ route('register') }}" class="btn btn-secondary">
+                                Register
+                            </a>
                         </div>
                     </form>
                 </div>
@@ -53,7 +47,7 @@
     <script>
         Swal.fire({
             icon: 'error',
-            title: 'Register Gagal!',
+            title: 'Login Gagal!',
             text: '{{ $errors->first() }}',
             confirmButtonText: 'Coba Lagi',
             backdrop: true

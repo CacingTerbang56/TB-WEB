@@ -57,7 +57,8 @@ Route::middleware(['auth', 'is_admin'])->prefix('admin')->name('admin.')->group(
     Route::resource('/items', ItemController::class)->except(['index']);
 
     Route::get('/peserta', function () {
-        $participants = User::withCount('transactions')->get();
+        $participants = User::where('role','user')
+        ->withCount('transactions')->get();
         return view('admin.peserta', compact('participants'));
     })->name('peserta');
 

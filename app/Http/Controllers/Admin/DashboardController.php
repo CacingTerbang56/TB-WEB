@@ -12,7 +12,7 @@ class DashboardController extends Controller
     public function index()
     {
         $totalBarang      = Item::count();
-        $totalPeserta     = User::count();
+        $totalPeserta     = User::where('role','user')->count();
         $totalTransaksi   = Transaction::count();
         $items            = Item::latest()->get();
 

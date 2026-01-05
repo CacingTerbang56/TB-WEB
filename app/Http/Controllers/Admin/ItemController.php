@@ -33,7 +33,6 @@ class ItemController extends Controller
                 ->store('items', 'public');
         }
 
-        // pertama kali buat barang: harga tertinggi = harga awal
         $validated['current_price'] = $validated['start_price'];
 
         Item::create($validated);
